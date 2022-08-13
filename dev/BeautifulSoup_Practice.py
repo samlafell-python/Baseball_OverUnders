@@ -32,85 +32,62 @@ import functions as f
 
 x = f.Game_Ids(2022)
 
-x.find_file()
-x.schedule_html()
-x.game_ids_to_scape()
+# Schedule HTML
+x.scape_schedules()
+x.schedule_html
 
-x.find_file()
-x.file_exists()
-
-x.game_ids_to_scape
-
-schedule_html = x.schedule_html()
-print(schedule_html)
-
-
-schedule_url = 'https://www.baseball-reference.com/leagues/majors/2022-schedule.shtml'
-schedule_request = requests.get(schedule_url)
-schedule_html = BeautifulSoup(schedule_request.text, 'html.parser')
-######### Total Games in Season #############
-total_games = len(schedule_html.find_all(class_="game"))
+# Game IDs
+game_ids = x.game_ids_to_scape()
 
 ######### if before today, grab the score, if not, leave score blank #############
 score_pattern = re.compile("(\d)")
 
-######### All Game Days in Season #############
-game_days = [day.text for day in schedule_html.find_all('h3')]
-
-
-######### Total Games in Season #############
 game_list = []
-
-
-indexes_needed = game_ids_to_scape(2022)
-
-
-for game_num in indexes_needed:
+for game_num in x.game_ids_to_scape:
+    game_num_info = x.schedule_html.find_all(class_="game")[game_num]
+    
     ############ Day of Game Played ############
-    game_day = schedule_html.find_all(class_="game")[game_num].parent.h3.text
+    game_day = game_num_info.parent.h3.text
     if game_day == "Today's Games":
         game_day = date.today().strftime('%A, %B %d, %Y')
-    #game_year, game_month, game_mday = strptime(game_day, '%A, %B %d, %Y')[0], strptime(game_day, '%A, %B %d, %Y')[1], strptime(game_day, '%A, %B %d, %Y')[2]
     gameday_asdate = datetime.strptime(game_day, '%A, %B %d, %Y').date()
     date_string_to_append = gameday_asdate.strftime('%m/%d/%Y')
     
     ######### Score Information #############
-    regex_text = schedule_html.find_all(class_="game")[game_num].text
+    regex_text = game_num_info.text
     if gameday_asdate < date.today():
         ######### Away Team Information #############
-        away_team_raw = schedule_html.find_all(class_="game")[game_num].contents[1].text.strip()
+        away_team_raw = game_num_info.contents[1].text.strip()
         away_team = away_team_raw.split('\n', 1)[0]
         away_team_score = int(re.findall(score_pattern, regex_text)[0])
         
         ######### Home Team Information ############# 
-        home_team_raw = schedule_html.find_all(class_="game")[game_num].contents[3].text.strip()
+        home_team_raw = game_num_info.contents[3].text.strip()
         home_team = home_team_raw.split('\n', 1)[0]
         home_team_score = int(re.findall(score_pattern, regex_text)[1])
         
     else:
         ######### Away Team Information #############
-        away_team = schedule_html.find_all(class_="game")[game_num].contents[3].text.strip()
+        away_team = game_num_info.contents[3].text.strip()
         away_team_score = np.NaN
         
         ######### Home Team Information ############# 
-        home_team = schedule_html.find_all(class_="game")[game_num].contents[5].text.strip()
+        home_team = game_num_info.contents[5].text.strip()
         home_team_score = np.NaN
         
-    if game_num %% 100 == 0:
-        print(f'Game Number: {game_num} of {total_games} games.')
+    if game_num % 100 == 0:
+        print(f'Game Number: {game_num} of {game_ids} games.')
     game_list.append([date_string_to_append, away_team, home_team, away_team_score, home_team_score])
     
     
-games2022 = pd.DataFrame(game_list, columns=['Date', 'Away_Team', 'Home_Team', 'Away_Score', 'Home_Score'])
-games2022.to_csv('data/interim/games2022.csv')
+#games2022 = pd.DataFrame(game_list, columns=['Date', 'Away_Team', 'Home_Team', 'Away_Score', 'Home_Score'])
+#games2022.to_csv('data/interim/games2022.csv')
 
 
-year = 2022
-if games_file_path:
-    games = pd.read_csv(games_file_path)
-    game_ids_to_scrape = games[games['Away_Score'].isnull()].index
+
     
     
+
 
 #################################################################################
 ##################### Grab all the boxscore URLs for that day ###################
