@@ -24,5 +24,3 @@ class Game_Ids:
         else:
             ######### Total Games in Season #############
             return np.array([i for i in range(len(self.schedule_html.find_all(class_="game")))])
-        
-
