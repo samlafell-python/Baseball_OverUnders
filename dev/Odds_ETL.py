@@ -2,6 +2,17 @@ import os
 import pandas as pd
 import numpy as np
 
+
+
+'''
+
+TO DO:
+- Add Comments
+- Chicago Cubs show as "CHC" and also "CUB" in the data, need to fix that.
+
+'''
+
+
 df2 = pd.DataFrame()
 path = '/Users/samlafell/Documents/Learning/sports_betting_project/data/external/odds_files/'
 for file_year in list(range(2017,2023)):
