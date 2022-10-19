@@ -18,12 +18,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=samlafell&show_icons=true)
 
 
 
@@ -75,19 +70,9 @@ This is a complex project, and the end goal is one that we all love to think abo
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Python]][Python-url]
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-* [![Next][Next.js]][Next-url]
-
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -177,35 +162,9 @@ These are some of the resources I've used along the way to help me gather data s
 * [PyBaseball GitHub Page](https://github.com/jldbc/pybaseball)
 * [Best README Template](https://github.com/othneildrew/Best-README-Template)
 * [Sports Odds](https://the-odds-api.com/)
-
-
 * [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+
+
+![Profile View Counter](https://komarev.com/ghpvc/?username=samlafell)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Python] : https://img.shields.io/pypi/pyversions/pybaseball∏
-[twitter-shield]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fwww.twitter.com%2Fsamlafell
-[project-link]: https://github.com/samlafell-python/Baseball_OverUnders
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/samlafell-python/Baseball_OverUnders/graphs/contributors
-[checks-shield]: https://img.shields.io/github/checks-status/samlafell-python/Baseball_OverUnders/33de0d3c0b07bc61fa9d6008f253ff18c5ae547c
-[forks-shield]: https://img.shields.io/github/forks/samlafell-python/Baseball_OverUnders.svg?style=for-the-badge
-[stars-shield]: https://img.shields.io/github/stars/samlafell-python/Baseball_OverUnders.svg?style=for-the-badge
-[issues-shield]: https://img.shields.io/github/issues/samlafell-python/Baseball_OverUnders.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/samlafell-python/Baseball_OverUnders.svg?style=for-the-badge
-[license-url]: https://github.com/samlafell-python/Baseball_OverUnders/blob/master/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/samlafell/
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
