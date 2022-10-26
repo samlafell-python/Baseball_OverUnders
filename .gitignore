@@ -156,3 +156,4 @@ cython_debug/
 
 
 ### Add in custom paths
+*.pptx
