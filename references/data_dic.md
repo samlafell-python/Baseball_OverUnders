@@ -1,5 +1,7 @@
 # Data Dictionary for the Statcast Data
+
 ## Sam LaFell
+
 ## MLB Over/Under Project
 
 - pitch_type
