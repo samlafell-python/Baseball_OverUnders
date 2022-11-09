@@ -12,5 +12,6 @@ def plate_appearances(df, min_pas):
     atbats = atbats.reset_index()
     atbats = atbats.drop(columns=['at_bat_number'], axis=1).groupby('batter').sum(numeric_only=True).reset_index()
     atbats = atbats.loc[atbats['batter_count'] >= min_pas]
+    atbats.columns = ['batter', 'PA']
     return atbats
     

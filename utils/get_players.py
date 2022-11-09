@@ -2,8 +2,19 @@ import pandas as pd
 import pybaseball as pb
 from datetime import datetime
 from pybaseball import batting_stats
+from pybaseball.lahman import fielding
 
 def get_players(game_day, team, min_abs_season):
+    """_summary_
+
+    Args:
+        game_day (_type_): _description_
+        team (_type_): _description_
+        min_abs_season (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     game_year = datetime.strptime(game_day, '%Y-%m-%d').year
     # get all of this season's batting data so far
@@ -24,4 +35,7 @@ def get_players(game_day, team, min_abs_season):
         batter = players.loc[players['name_first'] == name[1].lower()]
         player_id_df = pd.concat([player_id_df, batter])
         
+    players_positions = fielding().drop_duplicates(subset=['playerID'], keep='last')[['playerID', 'POS']]
+    player_id_df = player_id_df.merge(players_positions, left_on='key_bbref', right_on = 'playerID')
+
     return player_id_df
